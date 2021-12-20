@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {% if content is not None %}
+      {{ content|safe }}
+      <a href="{% url 'edit' title %}" class="btn btn-primary">Edit</a>
+    {% else %}
+      <h4>No such entry</h4>
+    {% endif %}
+
+{% endblock %}
